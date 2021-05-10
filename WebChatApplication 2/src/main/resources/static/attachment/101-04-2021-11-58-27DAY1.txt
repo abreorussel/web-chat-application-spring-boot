@@ -1,0 +1,154 @@
+LAB 1
+
+1.] [abreorussel@localhost /]$ cd etc
+    [abreorussel@localhost etc]$ ls -a
+
+2.] [abreorussel@localhost /]$ cd tmp
+    [abreorussel@localhost tmp]$ ls -a
+
+3.] 
+4.]
+5.] touch Myfile1
+6.] stat Myfile1
+7.] touch -a Myfile1
+    touch -m Myfile1
+    stat Myfile1
+8.] touch -a Myfile1
+    
+6.] Meta characters
+	a. ls -l
+	b. ls -l app*
+	c. ls -l app[12][12]*
+	d. ls -l app[^2]*
+	e. 
+	f. rm *.c
+
+7.] File Management
+	a. touch India/Kerala/Munnar/place_2_see
+	b. cp India/Kerala/Munnar/place_2_see India
+	c. mv India/place_2_see India/very_good_place
+	d. ls ../../
+	e. rm ../../Kerala/Munnar/place_2_see
+	f. rmdir ../../Karnataka/Banglore
+
+8.] grep
+	a. grep -n "root" /tmp/passwd
+	b. grep -c "bash$" /tmp/passwd
+	c. grep -n "[^bash]" /tmp/passwd
+
+
+
+
+LAB 2 - PROCESS
+
+1. sleep 1000 &
+   jobs -l
+   renice -19 63492
+
+2. jobs -l
+3. fg %1
+4. ctrl + z
+   bg %1     //to run it in the background
+5. renice 19 63880
+   ps -l
+6. kill -9 63880
+
+
+
+1. ps au | grep init
+2. tty
+3. 
+4. sleep 123 & (3 times)
+5. process ids
+6. top -p 64250,64257
+7. kill -9 64250,64257
+8. jobs -l
+9. vi test.c
+   ctrl + z
+10. jobs -l
+11. find / > allfiles.txt 2>/dev/null
+    ctrl + z
+12. sleep 123 &
+13. jobs -l
+14. kill -15 69582
+15. bg %1
+16. fg %2
+
+
+
+LAB 3
+
+1. date +%d-%m-%Y
+2. date +%m-%d-%Y
+3. 
+	a. Create a new user testuser1 using the following commands:
+	   # useradd  testuser1
+           #passwd  testuser1
+	b. # who am  i
+           #whoami
+	   # id
+	c. Switch to the new user as follows
+	   # su  -  testuser1
+
+	d. Display the kernel release : uname -r
+
+
+
+==============================================================
+Bash Scripting
+
+[1]
+
+[abreorussel@localhost ~]$ cat > showargs
+#!/bin/bash
+for ARG in "$*"  
+do
+echo "$ARG"
+done
+[abreorussel@localhost ~]$ cat showargs
+#!/bin/bash
+for ARG in "$*"
+do
+echo "$ARG"
+done
+[abreorussel@localhost ~]$ ./showargs
+bash: ./showargs: Permission denied
+[abreorussel@localhost ~]$ chmod u+x showargs 
+[abreorussel@localhost ~]$ ./showargs
+
+[abreorussel@localhost ~]$ ./showargs 1 2 3 4
+1 2 3 4
+[abreorussel@localhost ~]$ ls -l showargs 
+-rwxrw-r--. 1 abreorussel abreorussel 48 Feb 25 17:10 showargs
+
+
+
+[2]
+
+[abreorussel@localhost ~]$ cat > showargs1
+#!/bin/bash
+for ARG in "$@"
+do 
+echo "$ARG"
+done
+[abreorussel@localhost ~]$ chmod u+x showargs1
+[abreorussel@localhost ~]$ ./showargs1 1 2 3 4
+1
+2
+3
+4
+
+[3]
+
+abreorussel@localhost ~]$ cat > countargs
+#!/bin/bash
+echo "There are $# arguments. "    
+[abreorussel@localhost ~]$ ./countargs
+bash: ./countargs: Permission denied
+[abreorussel@localhost ~]$ chmod u+x countargs
+[abreorussel@localhost ~]$ ./countargs
+There are 0 arguments. 
+[abreorussel@localhost ~]$ ./countargs 1 2 
+There are 2 arguments.
+
+

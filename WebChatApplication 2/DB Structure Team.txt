@@ -1,0 +1,19 @@
+1. ChatUser (Entity, Produces and Consumes Messages)
+Attributes:-
+
+	1. userId			long				Unique DB Auto_Generated ID 			Primary Key		
+	2. userFullName			Varchar/String			User Input from Registration from 						
+	3. userEmailId			Varchar/String			User Input from Registration Form
+	4. userPhoneNumber		Varchar/String			User Input from Registration Form
+	5. userPassword			Varchar/String			User Input from Registration Form
+	6. userCreationDate		DateTime 			current system date time
+	7. userUpdationDate		LocalDateTime 			Account Updation date time
+	8. userDisplayPicture		Varchar/String			Location in fileSystem
+
+2. ChatAttachments (Entity, stores Attachments Data into file System)
+ Attributes
+
+ 	1. attachmentId			long				Unique DB Auto_Generated ID			Primary Key
+ 	2. fileName			String				Name of file
+ 	3. fileExtension		String				File Extension			
+ 	4. filePath			Varchar/String			Location in fileSystem					

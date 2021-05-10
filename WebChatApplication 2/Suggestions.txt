@@ -1,0 +1,27 @@
+---------------------------------------------
+				COMPLETED
+----------------------------------------------
+
+util package
+	validation strings
+	constants
+
+
+isBlank....
+
+
+hide db password
+
+unit testing
+	null empty valid
+	(naming convention/Comments remaining)
+	
+---------------------------------------------
+				NOT-COMPLETED
+----------------------------------------------
+
+Admin user
+	see all user
+	
+
+	

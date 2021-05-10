@@ -1,0 +1,56 @@
+[1]
+
+#!/bin/bash
+if [ $# -eq 0 ]
+then
+echo " usage: shell.sh <filename> "
+else
+stat $1 | tail -4 | head -3 |cut -c1-27
+fi
+
+
+[2]
+
+#!/bin/bash
+ls >> /home/rebootdetails_log 
+whoami >> /homerebootdetails_log 
+ps -u `whoami` >> /home/rebootdetails_log 
+date >> /home/rebootdetails_log 
+
+crontab -e
+
+
+[4]
+
+Q. ) A script “/home/ UNIXSCRIPT .sh” which will display all below information at one short 
+
+• Listing all the empty files in /var file system(create 5 empty file by touch command)
+
+ • List how many directories are present in /etc
+
+ • Display the count of uncommented lines in /etc/fstab
+
+ • Find all files in /usr where the group has write permission
+
+ • Display the line starting with “root” in /etc/passwd
+
+
+
+[5]
+
+#!/bin/bash
+
+
+STATUS="$(systemctl is-active vsftpd)"
+
+if [ $STATUS  == "active" ]
+then
+systemctl stop vsftpd
+else
+systemctl start vsftpd
+fi
+
+// inactive services
+systemctl --all --type=service --state=inactive
+
+

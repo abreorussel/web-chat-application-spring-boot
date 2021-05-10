@@ -1,0 +1,83 @@
+open login in new tab (Done)
+can open all cards together (Done)
+setting button only if logged in (Done)
+Cashbacks section changes(DOne)
+toast timer change(no timer) (Done)
+setting button dropdown(done)
+
+open popup on toast click(v2)
+keep popup open on tab changes(v2)
+
+
+replace user id in aff link (done)
+transaction and withdrawal link change (done)
+bigger font size for toast(done)
+replace icon (border around icon) (done)
+
+after login show see details and activate buttons
+once cookie is set only see details button with message Cashback activated, please continue shopping in this window. (done)
+
+could not find store for this domain to Could not find any offer for this website and relative height(done, awaiting confirmation)
+
+activate button should redirect to store URL if affiliate link is not present(done)
+Wednesday, 18/11/2020
+
+-Change build script. Do not touch the original code at all. For example, if we replace "Ext_Name_Here" in original code, and script fails during zip for some reason. Then all subsequent builds will be incorrect because script will not be able to find that keyword again. Instead, copy the code into another folder, make changes, create a zip file, and delete folder it in the end. (done)
+- Build script should accept domain name and version number, and replace it in manisfest.json (done)
+- demo1.clipmydeals.com is hardcoded in every API call right now. Use customer's actual domain name from manifest.json (or some other way) (done)
+- Cashback card should NOT be displayed when cashback is not available for that store. (done)
+- Remove the "Verified On" line if there is no verification date. (done, pending confirmation about title image change)
+- No toast on clarks.in although 1 coupon was available. (done)
+- Toast showing even for 0 offers on https://online.kfc.co.in/ & https://www.marksandspencer.in/ (done)
+-Toast content to be changed to show Cashback message as well, according to the following logic
+1. code = success, No. of coupons/Deals = 0, Cashback=false => No toast
+2. code = success, no. of coupons/deals = 0, cashback = true =>  Show toast title as"cashback msg"
+3. code = success, no. of coupons/deals != 0, cashback = false => Show toast title as  "Found x no. of offers to use"
+4. code = success, no. of coupons/deals != 0, cashback = true =>  Show toast title as "Found x offers to use + cashback msg" 
+
+
+
+
+
+
+Thursday, 26/11
+Title & Description do not get replaced in build script. (to be discussed)
+- zip file should be named as per domain - all lower cases, remove "www", replace dot(.) with underscore (_). So extension for wwww.discountsandcoupons.in will have file name discountsandcoupons_in.zip(done)
+- zip should directly have extension files. Right now, if you unzip the file you get "temp" folder in the root. The manifest.json should be in the root.(done)
+- "Get Deal" button takes too long in some cases.
+- why is cookie named "extStoresVisited" ??? (done)
+- rename testFunction() to something clear. Eg. checkURL() (done)
+- Press [ICON] icon to know more ==> To know more, press [ICON] icon in your browser.(done)
+
+
+points to discuss
+1. Title & Description do not get replaced in build script.
+2. "Get Deal" button takes too long in some cases.
+3. lifestyle cookie setting (website sets  lifestyle, extension sets lifestylestores)
+4. www in domain name
+
+
+
+
+
+
+
+
+searchg for myntra| instead of just myntra (done)
+change logic for name replacement (done)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

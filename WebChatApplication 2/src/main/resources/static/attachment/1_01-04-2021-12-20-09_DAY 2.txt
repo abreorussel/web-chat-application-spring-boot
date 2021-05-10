@@ -1,0 +1,222 @@
+CLASS WORK
+
+HEAD AND TAIL
+========================================
+987  head /tmp/passwd
+  988  head -2 /tmp/passwd
+  989  tail /tmp/passwd
+  990  tail -3 /tmp/passwd
+
+MORE AND LESS
+=======================================
+  991  man ls | more
+  992  man ls | less
+
+CUT
+========================================
+  993  cat /tmp/passwd
+  994  cut -d":" -f1 /tmp/passwd
+  995  cut -d":" -f1,2 /tmp/passwd
+  996  cut -d":" -f1,2,3 /tmp/passwd
+  997  cut -d":" -f1-4 /tmp/passwd
+  998  cut -c 1-6 /tmp/passwd
+  999  cut -c 1,6 /tmp/passwd
+ 1000  cat /tmp/passwd | more
+
+SORT
+========================================
+ 1001  sort /tmp/passwd
+ 1002  sort -r /tmp/passwd
+
+UNIQ
+========================================
+ 1003  uniq /tmp/passwd
+ 1004  uniq -d /tmp/passwd
+
+TRANSLATOR
+========================================
+ 1005  tr "[a-z]" "[A-Z]" </tmp/passwd
+ 1006  ls -l
+ 1007  ls -l | tr " " "|"
+ 1008  ls -l | tr -s " " "|"
+ 1009  ls -l | tr " " "|"
+ 1010  ls -l | tr -s " " "|"
+
+WORD COUNT
+========================================
+ 1011  wc /tmp/passwd
+ 1012  wc -l /tmp/passwd
+ 1013  wc -w /tmp/passwd
+ 1014  wc -c /tmp/passwd
+
+DIFF AND PATCH
+========================================
+ 1015  ls -l /tmp/passwd
+ 1016  cp /tmp/passwd /tmp/passwd1
+ 1031  cat /tmp/passwd1
+ 1032  cat >> /tmp/passwd1
+ 1033  diff -u /tmp/passwd /tmp/passwd1
+ 1034  diff -u /tmp/passwd /tmp/passwd1 > patchfile.patch
+ 1035  patch /tmp/passwd patchfile.patch
+ 1036  cat /tmp/passwd
+
+GCC COMPILER
+===============================================
+ 1070  ldd /usr/bin/ls
+ 1071  yum install gcc -y
+ 1072  cd
+ 1073  vim hello.c
+ 1074  gcc hello.c
+ 1075  gcc hello.c -o hello
+ 1076  chmod u+x hello.c
+ 1077  ./hello.c
+ 1078  ./hello
+ 1079  gcc -v
+
+C COde
+============================
+#include <stdio.h>
+int main()
+{
+ printf ( " hello world!\n");
+return 0;
+}
+
+gcc hello.c
+gcc hello.c -o hello
+./hello
+
+PROFILE TOOL
+=========================================================================
+
+1097  yum install perf
+ 1098  yum install perf -y
+ 1099  echo 0 > /proc/sys/kernel/perf_event_paranoid
+ 1100  cat /etc/sysctl.conf
+ 1101  cat /etc/sysctl.conf  | more
+ 1102  sysctl -a | grep perf
+ 1103  perf list
+ 1104  perf list sw
+ 1105  perf list hw
+ 1106  perf stat dd if=/dev/zero of=test.iso bs=10M count=1
+ 1107  perf top
+ 1108  perf top -a
+
+SHELL SCRIPTING
+=================================================================================
+vim sample.sh
+#!/bin/bash
+echo " list the files & directories `ls -l` "
+echo " currently logged in users `who` "
+echo " today's date & time is `date` "
+
+sh sample.sh
+
+vim greater.sh
+[root@server nseit]# cat greater.sh
+#!/bin/bash
+echo " Enter the numbers "
+read a
+read b
+if [ $a -gt $b ]
+then
+echo " $a is greater "
+else
+echo " $b is greate "
+fi
+
+
+
+LAB 5
+=================================================================================
+[1] greater than 3 no.s
+
+#!/bin/bash
+
+echo " Enter a"
+read a
+echo "Enter b"
+read b
+
+if [ $a -gt $b ]
+then
+echo "$a is greater"
+else
+echo "$b is greater"
+fi
+
+[2] delete empty lines in a given file
+
+#!/bin/bash
+echo "Enter filename"
+read f
+
+echo " Successfuly Deleted `sed -i '/^$/d' "$f"`"
+echo " `cat $f`"
+
+
+ALTERNATE METHOD
+================
+
+
+
+[3] check whether today is working day
+
+#!/bin/bash
+
+day=`date +%a`
+
+if [ $day == "Sat" ] || [ $day == "Sun" ]
+then
+echo "not a working day"
+else
+echo "working day"
+fi
+
+[4] creating 100 files
+#!/bin/bash 
+
+echo " creating 100 files ...."
+
+touch {1..100}.txt
+
+
+
+=====================================================================
+
+LAB 4
+[1] wc (Word Count):
+	
+1.Display the number of valid user accounts in the system[ Hint: /etc/passwd     contain a line for each user]
+2.Display the number of files and directories in the current directory
+3.Display the number of files in /etc whose name end with .conf
+4.Display the size of the file /etc/passwd                             
+	
+
+[2] head / tail / cut / sort / tr:
+		
+1.Display the 1st line of the file /etc/passwd
+2.Display the lines from 5th to 8th from /etc/passwd
+3.Display the 2nd line of the file /etc/passwd
+4.Display the penultimate(second last) line of the file /etc/passwd
+5.Display the output of   ls  -l  command where the columns are separated  by  |
+6.Display the names & the terminal names of all the online users in the ascending order of the 
+terminal names
+[1]5
+1. wc /tmp/passwd
+2. ls | wc -l
+3. ls *.conf | wc -l
+4. wc -c /etc/passwd
+
+[2]
+1. head -1 /etc/passwd
+2. head -8 /etc/passwd | tail -n +5
+3. head -2 /etc/passwd | tail -n +2
+4. wc -l /etc/passwd       //gives the number of lines
+   head -46 /etc/passwd | tail -n +46   //second last line
+5. ls -l | tr -s " " "|"
+6. sort /etc/passwd
+7. cut -d":" -f1,7 /etc/passwd |tr ":" " " | sort -k 2
+
+
+

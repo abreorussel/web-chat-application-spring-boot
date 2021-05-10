@@ -1,0 +1,15 @@
+git clone <url>
+git checkout initialExtension
+------------------------------------
+git add .
+git commit -m "Some Message"
+git push origin initialExtension
+------------------------------------
+git fetch --all
+cancel fetch ^^^
+git checkout master
+git branch -D intiialExtension
+git fetch --all
+git reset --hard origin/master
+K12:44 PM
+git checkout initialExtension
